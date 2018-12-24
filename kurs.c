@@ -494,6 +494,7 @@ int main()
 
 			printf("Enter [1], if you want to find with first keyword, else press [0]\n");
 			scanf("%d", &choice_num);
+			printf("If the name of the song consists of two or more words - enter them without spaces in lower case\n");
 			if (choice_num == 1)
 			{
 				getchar();
@@ -505,6 +506,7 @@ int main()
 			}
 			printf("Enter [1], if you want to find with second keyword, else press [0]\n");
 			scanf("%d", &choice_num);
+			printf("If the author of the song consists of two or more words - enter them without spaces in lower case\n");
 			if (choice_num == 1)
 			{
 				getchar();
@@ -516,6 +518,7 @@ int main()
 			}
 			printf("Enter [1], if you want to find with third keyword, else press [0]\n");
 			scanf("%d", &choice_num);
+			printf("Just enter ganre\n");
 			if (choice_num == 1)
 			{
 				getchar();
@@ -530,11 +533,11 @@ int main()
 			pNode = HeadPointer;
 			while (pNode != NULL)
 			{
-				//получение из pNode->ingr всех ингридиентов 
+				//ГЇГ®Г«ГіГ·ГҐГ­ГЁГҐ ГЁГ§ pNode->ingr ГўГ±ГҐГµ ГЁГ­ГЈГ°ГЁГ¤ГЁГҐГ­ГІГ®Гў 
 				j = i = k = 0;
 
-				do // обрабатываем строку ингридиентов данного узла и записываем ингридиенты по отдельности 
-				// в массив line_ingr 
+				do // Г®ГЎГ°Г ГЎГ ГІГ»ГўГ ГҐГ¬ Г±ГІГ°Г®ГЄГі ГЁГ­ГЈГ°ГЁГ¤ГЁГҐГ­ГІГ®Гў Г¤Г Г­Г­Г®ГЈГ® ГіГ§Г«Г  ГЁ Г§Г ГЇГЁГ±Г»ГўГ ГҐГ¬ ГЁГ­ГЈГ°ГЁГ¤ГЁГҐГ­ГІГ» ГЇГ® Г®ГІГ¤ГҐГ«ГјГ­Г®Г±ГІГЁ 
+				// Гў Г¬Г Г±Г±ГЁГў line_ingr 
 				{
 
 					do
@@ -544,7 +547,7 @@ int main()
 						k++;
 						char c = *(pNode->name + k);
 						if (*(pNode->name + k) == ' ' || *(pNode->name + k) == ',' || *(pNode->name + k) == '\0') break; // kostyl' 
-					} while (*(pNode->name + k) != ' ' || *(pNode->name + k) != ',' || *(pNode->name + k) != '\0'); // тут прикол 
+					} while (*(pNode->name + k) != ' ' || *(pNode->name + k) != ',' || *(pNode->name + k) != '\0'); // ГІГіГІ ГЇГ°ГЁГЄГ®Г« 
 					*(*(line_ingr + i) + j) = '\0';
 					i++;
 					count_ingr++;
@@ -565,7 +568,7 @@ int main()
 						k++;
 						char c = *(pNode->author + k);
 						if (*(pNode->author + k) == ' ' || *(pNode->author + k) == ',' || *(pNode->author + k) == '\0') break; // kostyl' 
-					} while (*(pNode->author + k) != ' ' || *(pNode->author + k) != ',' || *(pNode->author + k) != '\0'); // тут прикол 
+					} while (*(pNode->author + k) != ' ' || *(pNode->author + k) != ',' || *(pNode->author + k) != '\0'); // ГІГіГІ ГЇГ°ГЁГЄГ®Г« 
 					*(*(line_ingr + i) + j) = '\0';
 					i++;
 					count_ingr++;
@@ -586,7 +589,7 @@ int main()
 						k++;
 						char c = *(pNode->ganre + k);
 						if (*(pNode->ganre + k) == ' ' || *(pNode->ganre + k) == ',' || *(pNode->ganre + k) == '\0') break; // kostyl' 
-					} while (*(pNode->ganre + k) != ' ' || *(pNode->ganre + k) != ',' || *(pNode->ganre + k) != '\0'); // тут прикол 
+					} while (*(pNode->ganre + k) != ' ' || *(pNode->ganre + k) != ',' || *(pNode->ganre + k) != '\0'); // ГІГіГІ ГЇГ°ГЁГЄГ®Г« 
 					*(*(line_ingr + i) + j) = '\0';
 					i++;
 					count_ingr++;
@@ -597,7 +600,7 @@ int main()
 				} while (*(pNode->ganre + k) != '\0');
 
 				flag = 0;
-				//считаем сколько должно быть совпадений 
+				//Г±Г·ГЁГІГ ГҐГ¬ Г±ГЄГ®Г«ГјГЄГ® Г¤Г®Г«Г¦Г­Г® ГЎГ»ГІГј Г±Г®ГўГЇГ Г¤ГҐГ­ГЁГ© 
 
 
 				for (i = 0; i < count_ingr; i++)
