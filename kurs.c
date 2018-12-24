@@ -504,9 +504,9 @@ int main()
 				count_mas++;
 				i++;
 			}
+			printf("If the author of the song consists of two or more words - enter them without spaces in lower case\n");
 			printf("Enter [1], if you want to find with second keyword, else press [0]\n");
 			scanf("%d", &choice_num);
-			printf("If the author of the song consists of two or more words - enter them without spaces in lower case\n");
 			if (choice_num == 1)
 			{
 				getchar();
@@ -516,9 +516,9 @@ int main()
 				count_mas++;
 				i++;
 			}
+			printf("Just enter ganre\n");
 			printf("Enter [1], if you want to find with third keyword, else press [0]\n");
 			scanf("%d", &choice_num);
-			printf("Just enter ganre\n");
 			if (choice_num == 1)
 			{
 				getchar();
